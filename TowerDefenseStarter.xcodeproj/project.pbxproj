@@ -144,6 +144,10 @@
 		3BAE288E159BB36F007F4FB3 /* Waves.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE287C159BB36F007F4FB3 /* Waves.plist */; };
 		3BE5131C15A9EB54002BE0EE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5131B15A9EB54002BE0EE /* Enemy.m */; };
 		4B2CDD4316A6E5B700D86218 /* HomeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2CDD4216A6E5B700D86218 /* HomeLayer.m */; };
+		4B2CDD5B16A825B500D86218 /* mainscene1-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5716A825B500D86218 /* mainscene1-hd.pvr.ccz */; };
+		4B2CDD5C16A825B500D86218 /* mainscene1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5816A825B500D86218 /* mainscene1.plist */; };
+		4B2CDD5D16A825B500D86218 /* mainscene1.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5916A825B500D86218 /* mainscene1.pvr.ccz */; };
+		4B2CDD5E16A825B500D86218 /* mainscene2-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5A16A825B500D86218 /* mainscene2-hd.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -408,6 +412,10 @@
 		3BE5131B15A9EB54002BE0EE /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		4B2CDD4116A6E5B700D86218 /* HomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLayer.h; sourceTree = "<group>"; };
 		4B2CDD4216A6E5B700D86218 /* HomeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLayer.m; sourceTree = "<group>"; };
+		4B2CDD5716A825B500D86218 /* mainscene1-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mainscene1-hd.pvr.ccz"; sourceTree = "<group>"; };
+		4B2CDD5816A825B500D86218 /* mainscene1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainscene1.plist; sourceTree = "<group>"; };
+		4B2CDD5916A825B500D86218 /* mainscene1.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainscene1.pvr.ccz; sourceTree = "<group>"; };
+		4B2CDD5A16A825B500D86218 /* mainscene2-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mainscene2-hd.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +497,7 @@
 		3BAE26F0159BB1D9007F4FB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4B2CDD5516A8258800D86218 /* scene */,
 				3BAE2873159BB36F007F4FB3 /* Sfx */,
 				3BAE286A159BB36F007F4FB3 /* Bg.png */,
 				3BAE286B159BB36F007F4FB3 /* bullet.png */,
@@ -841,6 +850,17 @@
 			path = Resources/Sfx;
 			sourceTree = "<group>";
 		};
+		4B2CDD5516A8258800D86218 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				4B2CDD5716A825B500D86218 /* mainscene1-hd.pvr.ccz */,
+				4B2CDD5816A825B500D86218 /* mainscene1.plist */,
+				4B2CDD5916A825B500D86218 /* mainscene1.pvr.ccz */,
+				4B2CDD5A16A825B500D86218 /* mainscene2-hd.plist */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -918,6 +938,10 @@
 				3BAE288C159BB36F007F4FB3 /* tower.png in Resources */,
 				3BAE288D159BB36F007F4FB3 /* TowersPosition.plist in Resources */,
 				3BAE288E159BB36F007F4FB3 /* Waves.plist in Resources */,
+				4B2CDD5B16A825B500D86218 /* mainscene1-hd.pvr.ccz in Resources */,
+				4B2CDD5C16A825B500D86218 /* mainscene1.plist in Resources */,
+				4B2CDD5D16A825B500D86218 /* mainscene1.pvr.ccz in Resources */,
+				4B2CDD5E16A825B500D86218 /* mainscene2-hd.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
