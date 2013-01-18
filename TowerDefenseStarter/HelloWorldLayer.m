@@ -9,8 +9,8 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
-#import "Tower.h"
 #import "Waypoint.h"
+#import "Tower.h"
 #import "SimpleAudioEngine.h"
 
 // HelloWorldLayer implementation
@@ -72,6 +72,10 @@
         [self addChild:ui_gold_lbl z:10];
         [ui_gold_lbl setPosition:ccp(135,wins.height-12)];
         [ui_gold_lbl setAnchorPoint:ccp(0,0.5)];
+        
+        towers = [[NSMutableArray alloc]init];
+        
+        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 	}
 	return self;
 }
@@ -159,14 +163,47 @@
     
 }
 
-- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (BOOL)selectSpriteForTouch:(CGPoint)touchLocation {
+    CCSprite * newSprite = nil;
+    for (Tower *tower in towers) {
+        if (CGRectContainsPoint(tower.mySprite.boundingBox, touchLocation)) {
+            newSprite = tower.mySprite;
+            break;
+        }
+    }
+    if (newSprite == nil) {
+        return NO;
+    }
+    if (newSprite != selSprite) {
+        [selSprite stopAllActions];
+        [selSprite runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
+        CCRotateTo * rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
+        CCRotateTo * rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
+        CCRotateTo * rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
+        CCSequence * rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
+        [newSprite runAction:[CCRepeatForever actionWithAction:rotSeq]];
+        selSprite = newSprite;
+    }
+    return YES;
+}
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     
-	for( UITouch *touch in touches ) {
+//	for( UITouch *touch in touches ) {
+    
+//        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+//        if ([self selectSpriteForTouch:touchLocation]) {
+//            return YES;
+//        }
+
 		CGPoint location = [touch locationInView: [touch view]];
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
-        
+    
+    if ([self selectSpriteForTouch:location]) {
+        return YES;
+    }
+    
         for(CCSprite * tb in towerBases)
         {
             if([self canBuyTower] && CGRectContainsPoint([tb boundingBox],location) && !tb.userData)
@@ -182,8 +219,38 @@
                 tb.userData = tower;
             }
         }
-	}
+    return NO;
+//	}
 }
+//- (CGPoint)boundLayerPos:(CGPoint)newPos {
+//    CGSize winSize = [CCDirector sharedDirector].winSize;
+//    CGPoint retval = newPos;
+//    retval.x = MIN(retval.x, 0);
+//    retval.x = MAX(retval.x, -background.contentSize.width+winSize.width);
+//    retval.y = self.position.y;
+//    return retval;
+//}
+- (void)panForTranslation:(CGPoint)translation {
+    if (selSprite) {
+        CGPoint newPos = ccpAdd(selSprite.position, translation);
+        selSprite.position = newPos;
+    }
+//    else {
+//        CGPoint newPos = ccpAdd(self.position, translation);
+//        self.position = [self boundLayerPos:newPos];
+//    }
+}
+- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
+    CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+    
+    CGPoint oldTouchLocation = [touch previousLocationInView:touch.view];
+    oldTouchLocation = [[CCDirector sharedDirector] convertToGL:oldTouchLocation];
+    oldTouchLocation = [self convertToNodeSpace:oldTouchLocation];
+    
+    CGPoint translation = ccpSub(touchLocation, oldTouchLocation);
+    [self panForTranslation:translation];
+}
+
 
 -(BOOL)canBuyTower
 {

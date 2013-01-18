@@ -26,6 +26,8 @@
     
     int playerGold;
     CCLabelBMFont * ui_gold_lbl;
+    
+    CCSprite * selSprite;
 }
 
 @property (nonatomic,retain)NSMutableArray * towers;
