@@ -34,7 +34,6 @@
         [theGame addChild:self];
         
         [self scheduleUpdate];
-        
 	}
 	
 	return self;

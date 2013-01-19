@@ -209,6 +209,8 @@
     if (selTower) {
         CGPoint newPos = ccpAdd(selTower.mySprite.position, translation);
         selTower.mySprite.position = newPos;
+        selTower.mySprite.rotation = 0;
+        [selTower unscheduleUpdate];
     }
 }
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -251,6 +253,7 @@
         oldTb.userData = nil;
         selTower.mySprite.position = towerPositon;
     }
+    [selTower scheduleUpdate];
 }
 
 -(BOOL)canBuyTower
