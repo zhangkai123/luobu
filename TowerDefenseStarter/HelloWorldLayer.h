@@ -10,6 +10,7 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 
+@class Tower;
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
@@ -27,7 +28,8 @@
     int playerGold;
     CCLabelBMFont * ui_gold_lbl;
     
-    CCSprite * selSprite;
+    Tower * selTower;
+    CGPoint oldPosition;
 }
 
 @property (nonatomic,retain)NSMutableArray * towers;

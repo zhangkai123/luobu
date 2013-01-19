@@ -35,8 +35,6 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
-	// always call "super" init
-	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
         
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"8bitDungeonLevel.mp3" loop:YES];
@@ -164,81 +162,54 @@
 }
 
 - (BOOL)selectSpriteForTouch:(CGPoint)touchLocation {
-    CCSprite * newSprite = nil;
+    Tower * newTower = nil;
     for (Tower *tower in towers) {
         if (CGRectContainsPoint(tower.mySprite.boundingBox, touchLocation)) {
-            newSprite = tower.mySprite;
+            newTower = tower;
             break;
         }
     }
-    if (newSprite == nil) {
+    if (newTower == nil) {
         return NO;
     }
-    if (newSprite != selSprite) {
-        [selSprite stopAllActions];
-        [selSprite runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
-        CCRotateTo * rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
-        CCRotateTo * rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
-        CCRotateTo * rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
-        CCSequence * rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
-        [newSprite runAction:[CCRepeatForever actionWithAction:rotSeq]];
-        selSprite = newSprite;
+    if (newTower != selTower) {
+        selTower = newTower;
+        oldPosition = newTower.mySprite.position;
     }
     return YES;
 }
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    CGPoint location = [touch locationInView: [touch view]];
     
-//	for( UITouch *touch in touches ) {
-    
-//        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-//        if ([self selectSpriteForTouch:touchLocation]) {
-//            return YES;
-//        }
+    location = [[CCDirector sharedDirector] convertToGL: location];
 
-		CGPoint location = [touch locationInView: [touch view]];
-		
-		location = [[CCDirector sharedDirector] convertToGL: location];
-    
     if ([self selectSpriteForTouch:location]) {
         return YES;
     }
-    
-        for(CCSprite * tb in towerBases)
+
+    for(CCSprite * tb in towerBases)
+    {
+        if([self canBuyTower] && CGRectContainsPoint([tb boundingBox],location) && !tb.userData)
         {
-            if([self canBuyTower] && CGRectContainsPoint([tb boundingBox],location) && !tb.userData)
-            {
-                //We will spend our gold later.
-                playerGold -= kTOWER_COST;
-                [ui_gold_lbl setString:[NSString stringWithFormat:@"GOLD: %d",playerGold]];
-                
-                [[SimpleAudioEngine sharedEngine] playEffect:@"tower_place.wav"];
-                
-                Tower * tower = [Tower nodeWithTheGame:self location:tb.position];
-                [towers addObject:tower];
-                tb.userData = tower;
-            }
+            //We will spend our gold later.
+            playerGold -= kTOWER_COST;
+            [ui_gold_lbl setString:[NSString stringWithFormat:@"GOLD: %d",playerGold]];
+            
+            [[SimpleAudioEngine sharedEngine] playEffect:@"tower_place.wav"];
+            
+            Tower * tower = [Tower nodeWithTheGame:self location:tb.position];
+            [towers addObject:tower];
+            tb.userData = tower;
         }
-    return NO;
-//	}
-}
-//- (CGPoint)boundLayerPos:(CGPoint)newPos {
-//    CGSize winSize = [CCDirector sharedDirector].winSize;
-//    CGPoint retval = newPos;
-//    retval.x = MIN(retval.x, 0);
-//    retval.x = MAX(retval.x, -background.contentSize.width+winSize.width);
-//    retval.y = self.position.y;
-//    return retval;
-//}
-- (void)panForTranslation:(CGPoint)translation {
-    if (selSprite) {
-        CGPoint newPos = ccpAdd(selSprite.position, translation);
-        selSprite.position = newPos;
     }
-//    else {
-//        CGPoint newPos = ccpAdd(self.position, translation);
-//        self.position = [self boundLayerPos:newPos];
-//    }
+    return NO;
+}
+- (void)panForTranslation:(CGPoint)translation {
+    if (selTower) {
+        CGPoint newPos = ccpAdd(selTower.mySprite.position, translation);
+        selTower.mySprite.position = newPos;
+    }
 }
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
@@ -250,7 +221,37 @@
     CGPoint translation = ccpSub(touchLocation, oldTouchLocation);
     [self panForTranslation:translation];
 }
+-(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    BOOL movable = NO;
+    CGPoint towerPositon;
 
+    CCSprite *oldTb;
+    for(CCSprite * tb in towerBases)
+    {
+        if (tb.userData == selTower) {
+            oldTb = tb;
+        }
+    }
+    for(CCSprite * tb in towerBases)
+    {
+        if(CGRectIntersectsRect([tb boundingBox], [selTower.mySprite boundingBox]) && !tb.userData)
+        {
+            towerPositon = tb.position;
+            tb.userData = selTower;
+            movable = YES;
+            break;
+        }
+    }
+    if (!movable) {
+        
+        selTower.mySprite.position = oldPosition;
+    }else{
+        
+        oldTb.userData = nil;
+        selTower.mySprite.position = towerPositon;
+    }
+}
 
 -(BOOL)canBuyTower
 {
@@ -262,9 +263,6 @@
 
 void ccFillPoly( CGPoint *poli, int points, BOOL closePolygon )
 {
-    // Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-    // Needed states: GL_VERTEX_ARRAY,
-    // Unneeded states: GL_TEXTURE_2D, GL_TEXTURE_COORD_ARRAY, GL_COLOR_ARRAY
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
@@ -275,7 +273,6 @@ void ccFillPoly( CGPoint *poli, int points, BOOL closePolygon )
     else
         glDrawArrays(GL_LINE_STRIP, 0, points);
     
-    // restore default state
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
