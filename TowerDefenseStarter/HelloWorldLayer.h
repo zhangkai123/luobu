@@ -28,6 +28,7 @@
     int playerGold;
     CCLabelBMFont * ui_gold_lbl;
     
+    BOOL moving;
     Tower * selTower;
     CGPoint oldPosition;
 }

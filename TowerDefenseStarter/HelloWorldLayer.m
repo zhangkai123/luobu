@@ -172,14 +172,13 @@
     if (newTower == nil) {
         return NO;
     }
-    if (newTower != selTower) {
-        selTower = newTower;
-        oldPosition = newTower.mySprite.position;
-    }
+    selTower = newTower;
+    oldPosition = newTower.mySprite.position;
     return YES;
 }
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    moving = NO;
     CGPoint location = [touch locationInView: [touch view]];
     
     location = [[CCDirector sharedDirector] convertToGL: location];
@@ -222,9 +221,13 @@
     
     CGPoint translation = ccpSub(touchLocation, oldTouchLocation);
     [self panForTranslation:translation];
+    moving = YES;
 }
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    if (!moving) {
+        return;
+    }
     BOOL movable = NO;
     CGPoint towerPositon;
 
