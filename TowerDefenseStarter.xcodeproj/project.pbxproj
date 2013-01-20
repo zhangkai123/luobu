@@ -162,6 +162,7 @@
 		4B0919C816ABC27C008B2482 /* BG.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C316ABC27C008B2482 /* BG.plist */; };
 		4B0919C916ABC27C008B2482 /* BG.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C416ABC27C008B2482 /* BG.pvr.ccz */; };
 		4B0919CA16ABC27C008B2482 /* BGPath.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C516ABC27C008B2482 /* BGPath.tmx */; };
+		4B0919CD16AC0C4C008B2482 /* SpriteBuying.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0919CC16AC0C4B008B2482 /* SpriteBuying.m */; };
 		4B2CDD4316A6E5B700D86218 /* HomeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2CDD4216A6E5B700D86218 /* HomeLayer.m */; };
 		4B2CDD5B16A825B500D86218 /* mainscene1-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5716A825B500D86218 /* mainscene1-hd.pvr.ccz */; };
 		4B2CDD5C16A825B500D86218 /* mainscene1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5816A825B500D86218 /* mainscene1.plist */; };
@@ -450,6 +451,8 @@
 		4B0919C316ABC27C008B2482 /* BG.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BG.plist; sourceTree = "<group>"; };
 		4B0919C416ABC27C008B2482 /* BG.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = BG.pvr.ccz; sourceTree = "<group>"; };
 		4B0919C516ABC27C008B2482 /* BGPath.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BGPath.tmx; sourceTree = "<group>"; };
+		4B0919CB16AC0C4A008B2482 /* SpriteBuying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteBuying.h; sourceTree = "<group>"; };
+		4B0919CC16AC0C4B008B2482 /* SpriteBuying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteBuying.m; sourceTree = "<group>"; };
 		4B2CDD4116A6E5B700D86218 /* HomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLayer.h; sourceTree = "<group>"; };
 		4B2CDD4216A6E5B700D86218 /* HomeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLayer.m; sourceTree = "<group>"; };
 		4B2CDD5716A825B500D86218 /* mainscene1-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mainscene1-hd.pvr.ccz"; sourceTree = "<group>"; };
@@ -520,6 +523,8 @@
 				3BAE2848159BB1DD007F4FB3 /* HelloWorldLayer.m */,
 				4B2CDD4116A6E5B700D86218 /* HomeLayer.h */,
 				4B2CDD4216A6E5B700D86218 /* HomeLayer.m */,
+				4B0919CB16AC0C4A008B2482 /* SpriteBuying.h */,
+				4B0919CC16AC0C4B008B2482 /* SpriteBuying.m */,
 				3B663AC3159BC4D70015F7B8 /* Tower.h */,
 				3B663AC4159BC4D70015F7B8 /* Tower.m */,
 				4B0919B116ABB619008B2482 /* BottleTower.h */,
@@ -1158,6 +1163,7 @@
 				4B2CDD4316A6E5B700D86218 /* HomeLayer.m in Sources */,
 				4B0919B316ABB619008B2482 /* BottleTower.m in Sources */,
 				4B0919B616ABB633008B2482 /* ShitTower.m in Sources */,
+				4B0919CD16AC0C4C008B2482 /* SpriteBuying.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

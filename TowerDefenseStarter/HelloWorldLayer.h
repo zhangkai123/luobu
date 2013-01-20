@@ -9,6 +9,7 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "SpriteBuying.h"
 
 @class Tower;
 // HelloWorldLayer
@@ -31,6 +32,10 @@
     BOOL moving;
     Tower * selTower;
     CGPoint oldPosition;
+    
+    SpriteBuying *bottleBuy;
+    SpriteBuying *shitBuy;
+    BOOL buying;
 }
 
 @property (nonatomic,retain)NSMutableArray * towers;

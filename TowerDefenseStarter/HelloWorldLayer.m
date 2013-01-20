@@ -42,13 +42,28 @@
 		self.isTouchEnabled = YES;
         CGSize wins = [CCDirector sharedDirector].winSize;
                 
-        CCSpriteBatchNode *loadingBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"BG"];
-        [self addChild:loadingBatchNode z:2];
-        
+        CCSpriteBatchNode *backgroundNode = [CCSpriteBatchNode batchNodeWithFile:@"BG"];
+        [self addChild:backgroundNode z:0];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"BG.plist"];
+        
+        CCSpriteBatchNode *bottleTowerNode = [CCSpriteBatchNode batchNodeWithFile:@"TBottle"];
+        [self addChild:bottleTowerNode z:1];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"TBottle.plist"];
+        
+        CCSpriteBatchNode *shitTowerNode = [CCSpriteBatchNode batchNodeWithFile:@"TShit"];
+        [self addChild:shitTowerNode z:2];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"TShit.plist"];
+
         CCSprite *scene1 = [CCSprite spriteWithSpriteFrameName:@"skymap01.png"];
         scene1.position = ccp(wins.width/2,wins.height/2);
         [self addChild:scene1];
+        
+        bottleBuy = [SpriteBuying spriteWithSpriteFrameName:@"Bottle01.png"];
+        shitBuy = [SpriteBuying spriteWithSpriteFrameName:@"Shit01.png"];
+        bottleBuy.position = ccp(-100, -100);
+        shitBuy.position = ccp(-100, -100);
+        [self addChild:bottleBuy z:10];
+        [self addChild:shitBuy z:10];
         
         [self loadTowerPositions];
         [self addWaypoints];
@@ -182,6 +197,12 @@
 }
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    if (buying) {
+        bottleBuy.position = ccp(-100, -100);
+        shitBuy.position = ccp(-100, -100);
+        buying = NO;
+        return NO;
+    }
     moving = NO;
     CGPoint location = [touch locationInView: [touch view]];
     
@@ -201,9 +222,12 @@
             
             [[SimpleAudioEngine sharedEngine] playEffect:@"tower_place.wav"];
             
-            Tower * tower = [Tower nodeWithTheGame:self location:tb.position];
-            [towers addObject:tower];
-            tb.userData = tower;
+//            Tower * tower = [Tower nodeWithTheGame:self location:tb.position];
+//            [towers addObject:tower];
+//            tb.userData = tower;
+            bottleBuy.position = ccp(tb.position.x - 20, tb.position.y -20);
+            shitBuy.position = ccp(tb.position.x + 20, tb.position.y -20);
+            buying = YES;
         }
     }
     return NO;

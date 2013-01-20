@@ -26,7 +26,7 @@
         damage = 10;
         fireRate = 1;
         
-        mySprite = [CCSprite spriteWithFile:@"tower.png"];
+        mySprite = [CCSprite spriteWithSpriteFrameName:@"Shit21.png"];
 		[self addChild:mySprite];
         
         [mySprite setPosition:location];
