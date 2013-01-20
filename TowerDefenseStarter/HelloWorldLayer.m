@@ -41,10 +41,14 @@
         
 		self.isTouchEnabled = YES;
         CGSize wins = [CCDirector sharedDirector].winSize;
+                
+        CCSpriteBatchNode *loadingBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"BG"];
+        [self addChild:loadingBatchNode z:2];
         
-        CCSprite * background = [CCSprite spriteWithFile:@"Bg.png"];
-        [self addChild:background];
-        [background setPosition:ccp(wins.width/2,wins.height/2)];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"BG.plist"];
+        CCSprite *scene1 = [CCSprite spriteWithSpriteFrameName:@"skymap01.png"];
+        scene1.position = ccp(wins.width/2,wins.height/2);
+        [self addChild:scene1];
         
         [self loadTowerPositions];
         [self addWaypoints];

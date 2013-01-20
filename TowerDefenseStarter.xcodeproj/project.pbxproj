@@ -143,6 +143,25 @@
 		3BAE288D159BB36F007F4FB3 /* TowersPosition.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE287B159BB36F007F4FB3 /* TowersPosition.plist */; };
 		3BAE288E159BB36F007F4FB3 /* Waves.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE287C159BB36F007F4FB3 /* Waves.plist */; };
 		3BE5131C15A9EB54002BE0EE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5131B15A9EB54002BE0EE /* Enemy.m */; };
+		4B0919A216ABA51F008B2482 /* TBottle-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B09199E16ABA51F008B2482 /* TBottle-hd.plist */; };
+		4B0919A316ABA51F008B2482 /* TBottle-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B09199F16ABA51F008B2482 /* TBottle-hd.pvr.ccz */; };
+		4B0919A416ABA51F008B2482 /* TBottle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919A016ABA51F008B2482 /* TBottle.plist */; };
+		4B0919A516ABA51F008B2482 /* TBottle.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919A116ABA51F008B2482 /* TBottle.pvr.ccz */; };
+		4B0919AA16ABA541008B2482 /* TShit-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919A616ABA541008B2482 /* TShit-hd.plist */; };
+		4B0919AB16ABA541008B2482 /* TShit-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919A716ABA541008B2482 /* TShit-hd.pvr.ccz */; };
+		4B0919AC16ABA541008B2482 /* TShit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919A816ABA541008B2482 /* TShit.plist */; };
+		4B0919AD16ABA541008B2482 /* TShit.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919A916ABA541008B2482 /* TShit.pvr.ccz */; };
+		4B0919B316ABB619008B2482 /* BottleTower.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0919B216ABB619008B2482 /* BottleTower.m */; };
+		4B0919B616ABB633008B2482 /* ShitTower.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0919B516ABB633008B2482 /* ShitTower.m */; };
+		4B0919BB16ABC090008B2482 /* Items02-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919B716ABC090008B2482 /* Items02-hd.plist */; };
+		4B0919BC16ABC090008B2482 /* Items02-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919B816ABC090008B2482 /* Items02-hd.pvr.ccz */; };
+		4B0919BD16ABC090008B2482 /* Items02.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919B916ABC090008B2482 /* Items02.plist */; };
+		4B0919BE16ABC090008B2482 /* Items02.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919BA16ABC090008B2482 /* Items02.pvr.ccz */; };
+		4B0919C616ABC27C008B2482 /* BG-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C116ABC27C008B2482 /* BG-hd.plist */; };
+		4B0919C716ABC27C008B2482 /* BG-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C216ABC27C008B2482 /* BG-hd.pvr.ccz */; };
+		4B0919C816ABC27C008B2482 /* BG.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C316ABC27C008B2482 /* BG.plist */; };
+		4B0919C916ABC27C008B2482 /* BG.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C416ABC27C008B2482 /* BG.pvr.ccz */; };
+		4B0919CA16ABC27C008B2482 /* BGPath.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4B0919C516ABC27C008B2482 /* BGPath.tmx */; };
 		4B2CDD4316A6E5B700D86218 /* HomeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2CDD4216A6E5B700D86218 /* HomeLayer.m */; };
 		4B2CDD5B16A825B500D86218 /* mainscene1-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5716A825B500D86218 /* mainscene1-hd.pvr.ccz */; };
 		4B2CDD5C16A825B500D86218 /* mainscene1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B2CDD5816A825B500D86218 /* mainscene1.plist */; };
@@ -410,6 +429,27 @@
 		3BAE287C159BB36F007F4FB3 /* Waves.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Waves.plist; path = Resources/Waves.plist; sourceTree = "<group>"; };
 		3BE5131A15A9EB54002BE0EE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		3BE5131B15A9EB54002BE0EE /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		4B09199E16ABA51F008B2482 /* TBottle-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TBottle-hd.plist"; sourceTree = "<group>"; };
+		4B09199F16ABA51F008B2482 /* TBottle-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TBottle-hd.pvr.ccz"; sourceTree = "<group>"; };
+		4B0919A016ABA51F008B2482 /* TBottle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TBottle.plist; sourceTree = "<group>"; };
+		4B0919A116ABA51F008B2482 /* TBottle.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = TBottle.pvr.ccz; sourceTree = "<group>"; };
+		4B0919A616ABA541008B2482 /* TShit-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TShit-hd.plist"; sourceTree = "<group>"; };
+		4B0919A716ABA541008B2482 /* TShit-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TShit-hd.pvr.ccz"; sourceTree = "<group>"; };
+		4B0919A816ABA541008B2482 /* TShit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TShit.plist; sourceTree = "<group>"; };
+		4B0919A916ABA541008B2482 /* TShit.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = TShit.pvr.ccz; sourceTree = "<group>"; };
+		4B0919B116ABB619008B2482 /* BottleTower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottleTower.h; sourceTree = "<group>"; };
+		4B0919B216ABB619008B2482 /* BottleTower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottleTower.m; sourceTree = "<group>"; };
+		4B0919B416ABB633008B2482 /* ShitTower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShitTower.h; sourceTree = "<group>"; };
+		4B0919B516ABB633008B2482 /* ShitTower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShitTower.m; sourceTree = "<group>"; };
+		4B0919B716ABC090008B2482 /* Items02-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Items02-hd.plist"; sourceTree = "<group>"; };
+		4B0919B816ABC090008B2482 /* Items02-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Items02-hd.pvr.ccz"; sourceTree = "<group>"; };
+		4B0919B916ABC090008B2482 /* Items02.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Items02.plist; sourceTree = "<group>"; };
+		4B0919BA16ABC090008B2482 /* Items02.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Items02.pvr.ccz; sourceTree = "<group>"; };
+		4B0919C116ABC27C008B2482 /* BG-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BG-hd.plist"; sourceTree = "<group>"; };
+		4B0919C216ABC27C008B2482 /* BG-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BG-hd.pvr.ccz"; sourceTree = "<group>"; };
+		4B0919C316ABC27C008B2482 /* BG.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BG.plist; sourceTree = "<group>"; };
+		4B0919C416ABC27C008B2482 /* BG.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = BG.pvr.ccz; sourceTree = "<group>"; };
+		4B0919C516ABC27C008B2482 /* BGPath.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BGPath.tmx; sourceTree = "<group>"; };
 		4B2CDD4116A6E5B700D86218 /* HomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLayer.h; sourceTree = "<group>"; };
 		4B2CDD4216A6E5B700D86218 /* HomeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLayer.m; sourceTree = "<group>"; };
 		4B2CDD5716A825B500D86218 /* mainscene1-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mainscene1-hd.pvr.ccz"; sourceTree = "<group>"; };
@@ -482,6 +522,10 @@
 				4B2CDD4216A6E5B700D86218 /* HomeLayer.m */,
 				3B663AC3159BC4D70015F7B8 /* Tower.h */,
 				3B663AC4159BC4D70015F7B8 /* Tower.m */,
+				4B0919B116ABB619008B2482 /* BottleTower.h */,
+				4B0919B216ABB619008B2482 /* BottleTower.m */,
+				4B0919B416ABB633008B2482 /* ShitTower.h */,
+				4B0919B516ABB633008B2482 /* ShitTower.m */,
 				3B663AE1159F747D0015F7B8 /* Waypoint.h */,
 				3B663AE2159F747D0015F7B8 /* Waypoint.m */,
 				3BAE284A159BB1DD007F4FB3 /* GameConfig.h */,
@@ -497,6 +541,12 @@
 		3BAE26F0159BB1D9007F4FB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4B0919B716ABC090008B2482 /* Items02-hd.plist */,
+				4B0919B816ABC090008B2482 /* Items02-hd.pvr.ccz */,
+				4B0919B916ABC090008B2482 /* Items02.plist */,
+				4B0919BA16ABC090008B2482 /* Items02.pvr.ccz */,
+				4B0919BF16ABC21D008B2482 /* Theme1 */,
+				4B09198C16ABA469008B2482 /* Tower */,
 				4B2CDD5516A8258800D86218 /* scene */,
 				3BAE2873159BB36F007F4FB3 /* Sfx */,
 				3BAE286A159BB36F007F4FB3 /* Bg.png */,
@@ -850,6 +900,41 @@
 			path = Resources/Sfx;
 			sourceTree = "<group>";
 		};
+		4B09198C16ABA469008B2482 /* Tower */ = {
+			isa = PBXGroup;
+			children = (
+				4B09199E16ABA51F008B2482 /* TBottle-hd.plist */,
+				4B09199F16ABA51F008B2482 /* TBottle-hd.pvr.ccz */,
+				4B0919A016ABA51F008B2482 /* TBottle.plist */,
+				4B0919A116ABA51F008B2482 /* TBottle.pvr.ccz */,
+				4B0919A616ABA541008B2482 /* TShit-hd.plist */,
+				4B0919A716ABA541008B2482 /* TShit-hd.pvr.ccz */,
+				4B0919A816ABA541008B2482 /* TShit.plist */,
+				4B0919A916ABA541008B2482 /* TShit.pvr.ccz */,
+			);
+			name = Tower;
+			sourceTree = "<group>";
+		};
+		4B0919BF16ABC21D008B2482 /* Theme1 */ = {
+			isa = PBXGroup;
+			children = (
+				4B0919C016ABC234008B2482 /* BG1 */,
+			);
+			name = Theme1;
+			sourceTree = "<group>";
+		};
+		4B0919C016ABC234008B2482 /* BG1 */ = {
+			isa = PBXGroup;
+			children = (
+				4B0919C116ABC27C008B2482 /* BG-hd.plist */,
+				4B0919C216ABC27C008B2482 /* BG-hd.pvr.ccz */,
+				4B0919C316ABC27C008B2482 /* BG.plist */,
+				4B0919C416ABC27C008B2482 /* BG.pvr.ccz */,
+				4B0919C516ABC27C008B2482 /* BGPath.tmx */,
+			);
+			name = BG1;
+			sourceTree = "<group>";
+		};
 		4B2CDD5516A8258800D86218 /* scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,6 +1027,23 @@
 				4B2CDD5C16A825B500D86218 /* mainscene1.plist in Resources */,
 				4B2CDD5D16A825B500D86218 /* mainscene1.pvr.ccz in Resources */,
 				4B2CDD5E16A825B500D86218 /* mainscene2-hd.plist in Resources */,
+				4B0919A216ABA51F008B2482 /* TBottle-hd.plist in Resources */,
+				4B0919A316ABA51F008B2482 /* TBottle-hd.pvr.ccz in Resources */,
+				4B0919A416ABA51F008B2482 /* TBottle.plist in Resources */,
+				4B0919A516ABA51F008B2482 /* TBottle.pvr.ccz in Resources */,
+				4B0919AA16ABA541008B2482 /* TShit-hd.plist in Resources */,
+				4B0919AB16ABA541008B2482 /* TShit-hd.pvr.ccz in Resources */,
+				4B0919AC16ABA541008B2482 /* TShit.plist in Resources */,
+				4B0919AD16ABA541008B2482 /* TShit.pvr.ccz in Resources */,
+				4B0919BB16ABC090008B2482 /* Items02-hd.plist in Resources */,
+				4B0919BC16ABC090008B2482 /* Items02-hd.pvr.ccz in Resources */,
+				4B0919BD16ABC090008B2482 /* Items02.plist in Resources */,
+				4B0919BE16ABC090008B2482 /* Items02.pvr.ccz in Resources */,
+				4B0919C616ABC27C008B2482 /* BG-hd.plist in Resources */,
+				4B0919C716ABC27C008B2482 /* BG-hd.pvr.ccz in Resources */,
+				4B0919C816ABC27C008B2482 /* BG.plist in Resources */,
+				4B0919C916ABC27C008B2482 /* BG.pvr.ccz in Resources */,
+				4B0919CA16ABC27C008B2482 /* BGPath.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,6 +1156,8 @@
 				3B663AE3159F747D0015F7B8 /* Waypoint.m in Sources */,
 				3BE5131C15A9EB54002BE0EE /* Enemy.m in Sources */,
 				4B2CDD4316A6E5B700D86218 /* HomeLayer.m in Sources */,
+				4B0919B316ABB619008B2482 /* BottleTower.m in Sources */,
+				4B0919B616ABB633008B2482 /* ShitTower.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
